@@ -8,7 +8,8 @@ SELECT
 	, em. first_name
 	, em. sex
 	, s. salary
-FROM employees AS em
+FROM 
+	employees AS em
 	INNER JOIN salaries AS s
 	ON em.emp_no = s.emp_no
 LIMIT(10);
@@ -55,7 +56,8 @@ SELECT
 	, em.last_name
 	, em.first_name
 	, dep.dept_name
-FROM employees AS em
+FROM 
+	employees AS em
 INNER JOIN 
 	dept_emp AS de
 	ON em.emp_no = de.emp_no
