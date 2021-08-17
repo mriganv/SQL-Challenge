@@ -83,6 +83,7 @@ FROM
 	JOIN departments AS dep ON de.dept_no = dep.dept_no
 WHERE
 	dep.dept_name = 'Sales'
+LIMIT(5);
 
 ********************************************************************************************************************************************
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
@@ -116,3 +117,5 @@ HAVING
 ORDER BY
 	"Repeated last_name COUNT" DESC
 LIMIT(5);
+
+************************************************************************************************************************
