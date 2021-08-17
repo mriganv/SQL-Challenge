@@ -10,8 +10,10 @@ SELECT
 	, s. salary
 FROM 
 	employees AS em
-	INNER JOIN salaries AS s
-	ON em.emp_no = s.emp_no
+INNER JOIN 
+	salaries AS s
+ON 
+	em.emp_no = s.emp_no
 LIMIT(10);
 
 **********************************************************************************
@@ -24,7 +26,8 @@ SELECT
 	, hire_date 
 FROM 
 	employees
-WHERE extract(year from hire_date) = 1986
+WHERE 
+	extract(year from hire_date) = 1986
 LIMIT (5);
 
 ****************************************************************************************************************************************************************
@@ -41,9 +44,12 @@ FROM
 	employees AS em
 INNER JOIN
 	dept_manager AS d
-	ON em.emp_no = d.emp_no
-	JOIN departments AS dep
-	ON d.dept_no = dep.dept_no
+ON 
+	em.emp_no = d.emp_no
+JOIN 
+	departments AS dep
+ON 
+	d.dept_no = dep.dept_no
 LIMIT(5);
 
 
@@ -60,9 +66,12 @@ FROM
 	employees AS em
 INNER JOIN 
 	dept_emp AS de
-	ON em.emp_no = de.emp_no
-	JOIN departments AS dep
-	ON de.dept_no = dep.dept_no
+ON 
+	em.emp_no = de.emp_no
+JOIN 
+	departments AS dep
+ON 
+	de.dept_no = dep.dept_no
 LIMIT(5);
 
 ******************************************************************************************************************	
@@ -92,28 +101,35 @@ FROM
 	employees AS em
 INNER JOIN
 	dept_emp AS de
-	ON em.emp_no = de.emp_no
-	JOIN departments AS dep
-	ON de.dept_no = dep.dept_no
-	WHERE dep.dept_name = 'Sales'
+ON 
+	em.emp_no = de.emp_no
+JOIN 
+	departments AS dep
+ON 
+	de.dept_no = dep.dept_no
+WHERE
+	 dep.dept_name = 'Sales'
 
 ********************************************************************************************************************************************
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 ********************************************************************************************************************************************
 
 SELECT
-em.emp_no
-, em.last_name
-, em.first_name
-, dep.dept_name
+	em.emp_no
+	, em.last_name
+	, em.first_name
+	, dep.dept_name
 FROM 
 	employees AS em
 INNER JOIN 
 	dept_emp AS de
-	ON em.emp_no = de.emp_no
-	JOIN departments AS dep
-	ON de.dept_no = dep.dept_no
-	WHERE 
+ON 
+	em.emp_no = de.emp_no
+JOIN 
+	departments AS dep
+ON 
+	de.dept_no = dep.dept_no
+WHERE 
 	dep.dept_name = 'Sales' OR dep.dept_name = 'Development'
 LIMIT(5);	
 
